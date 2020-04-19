@@ -11,7 +11,7 @@ public final class calculadoraImpuestos {
     public static double calculaPago (Empleado empleado){
         double pago=0, Renta=0, ISSS=0, AFP=0;
         double auxSalario=empleado.getSalario();
-        if(empleado instanceof plazaFija){
+        if(empleado instanceof PlazaFija){
             AFP=0.0625*auxSalario;
             ISSS=0.03*auxSalario;
             auxSalario=auxSalario-AFP-ISSS;
