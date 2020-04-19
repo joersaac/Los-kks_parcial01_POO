@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class Empresa {
     private String nombre;
-    private ArrayList<Empleado> Personal;
+    private ArrayList<Empleado> planilla;
 
     public Empresa(String nombre) {
         this.nombre = nombre;
-        Personal=new ArrayList<>();
+        planilla=new ArrayList<>();
     }
 
     public ArrayList<Empleado> getPersonal() {
-        return Personal;
+        return planilla;
     }
 
     public String getNombre() {
@@ -20,10 +20,10 @@ public class Empresa {
     }
 
     public void  addEmpleado (Empleado empleado){
-        Personal.add(empleado);
+        planilla.add(empleado);
     }
 
     public void quitEmpleado (String name){
-        Personal.removeIf(s->s.Nombre.equalsIgnoreCase(name));
+        planilla.removeIf(s->s.Nombre.equalsIgnoreCase(name));
     }
 }

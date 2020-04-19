@@ -20,9 +20,9 @@ public class Documento {
     @Override
     public String
     toString() {
-        return "Documento{" +
+        return "Documento{\n" +
                 "Nombre='" + Nombre + '\'' +
                 ", numero='" + numero + '\'' +
-                '}';
+                "   \n}";
     }
 }

@@ -27,7 +27,11 @@ abstract class Empleado {
         return Documentos;
     }
 
-    public void addDocumento (Documento doc){
+    public void addDocumento (Documento doc) throws AlreadyExistingDocException {
+        for (Documento d : Documentos) {
+            if (d.getNumero().equals(doc.getNumero()))
+            throw new AlreadyExistingDocException("Numero de documento ingresado ya existe.");
+        }
         Documentos.add(doc);
     }
 

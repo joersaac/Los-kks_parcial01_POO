@@ -8,4 +8,5 @@ public class AlreadyExistingDocException extends Exception{
     public AlreadyExistingDocException(String message) {
         super(message);
     }
+
 }
