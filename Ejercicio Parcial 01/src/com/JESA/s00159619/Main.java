@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args){
         ArrayList<Empleado> auxPlanilla = new ArrayList<>();
         Empresa Empresa1 = new Empresa("Papa jones");
-        int opcion = 0;
+        int opcion = 1;
 
         do {
             try {
