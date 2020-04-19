@@ -1,5 +1,6 @@
 package com.JESA.s00159619;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class Empresa {
@@ -23,7 +24,18 @@ public class Empresa {
         planilla.add(empleado);
     }
 
-    public void quitEmpleado (String name){
-        planilla.removeIf(s->s.Nombre.equalsIgnoreCase(name));
+    public void quitEmpleado (String name)throws NotFoundEmployeeException{
+        boolean exist=false;
+        for (Empleado p : planilla) {
+            if(p.getNombre().equalsIgnoreCase(name)){
+                planilla.remove(p);
+                exist=true;
+                JOptionPane.showMessageDialog(null,"Empleado despedido");
+
+                break;
+            }
+        }
+        if(!exist)
+            throw new NotFoundEmployeeException("Empleado a despedir no existe.");
     }
 }

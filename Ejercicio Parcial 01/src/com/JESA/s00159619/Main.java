@@ -70,10 +70,16 @@ public class Main {
                     case 4:
                         String EmployeePay = JOptionPane.showInputDialog(null, "Nombre del empleado a Pagar:");
                         auxPlanilla = Empresa1.getPersonal();
-                        auxPlanilla.forEach(s -> {
-                            if (s.Nombre.equalsIgnoreCase(EmployeePay))
-                                JOptionPane.showMessageDialog(null,calculadoraImpuestos.calculaPago(s));
-                        });
+                        boolean exis=false;
+                        for (Empleado p : auxPlanilla) {
+                            if (p.Nombre.equalsIgnoreCase(EmployeePay)){
+                                JOptionPane.showMessageDialog(null,"Su sueldo es de: $" + calculadoraImpuestos.calculaPago(p));
+                                exis=true;
+                                break;
+                            }
+                        }
+                        if(!exis)
+                            throw new  NotFoundEmployeeException("Empleado a pagar no existe");
                         break;
                     case 5:
                         JOptionPane.showMessageDialog(null,calculadoraImpuestos.mostrarTotales());
